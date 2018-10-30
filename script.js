@@ -2,7 +2,7 @@ const GAMES_TO_PLAY = 10;
 
 //byrjar ballid
 function start() {
-  let result = confirm("Markmiðið er að svara eins mörgum af 10 dæmum rétt eins hratt og mögulegt er");
+  let result = confirm(`Markmiðið er að svara eins mörgum af ${GAMES_TO_PLAY} dæmum rétt eins hratt og mögulegt er`);
   if (result == true) {
     play();
   } 
@@ -28,11 +28,11 @@ function play() {
   }
   
   //latum spilara vita hvernig honum gekk
-  if (answerCount == 10) {
-    let totalTime = ((new Date())-startTime)/1000;
-    let averageTime = totalTime/10;
+  if (answerCount == GAMES_TO_PLAY) {
+    let totalTime = (((new Date())-startTime)/1000).toFixed(2);
+    let averageTime = (totalTime/10).toFixed(2);
     let endTime = new Date();
-    alert(`Thu svaradir ${correctAnswerCount} af 10 rett a ${totalTime} sekundum\nMedaltimi thinn var ${averageTime}`);
+    alert(`Thu svaradir ${correctAnswerCount} af ${GAMES_TO_PLAY} rett a ${totalTime} sekundum\nMedaltimi thinn var ${averageTime} sekundur`);
 
     let result = confirm("Villtu spila aftur?");
     if (result == true) {
