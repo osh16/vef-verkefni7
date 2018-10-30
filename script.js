@@ -21,6 +21,7 @@ function play() {
       correctAnswerCount++;
       answerCount++;
     } else if (question == null) {
+      alert("Haett i leik");
       break;
     } else {
       answerCount++;
@@ -30,9 +31,9 @@ function play() {
   //latum spilara vita hvernig honum gekk
   if (answerCount == GAMES_TO_PLAY) {
     let totalTime = (((new Date())-startTime)/1000).toFixed(2);
-    let averageTime = (totalTime/10).toFixed(2);
+    let averageTime = (correctAnswerCount/totalTime).toFixed(2);
     let endTime = new Date();
-    alert(`Thu svaradir ${correctAnswerCount} af ${GAMES_TO_PLAY} rett a ${totalTime} sekundum\nMedaltimi thinn var ${averageTime} sekundur`);
+    alert(`Thu svaradir ${correctAnswerCount} af ${GAMES_TO_PLAY} rett a ${totalTime} sekundum\nMedalrett svor a sekundu eru ${averageTime}`);
 
     let result = confirm("Villtu spila aftur?");
     if (result == true) {
